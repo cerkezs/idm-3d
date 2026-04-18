@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>IDM Mühendislik - 3D Ürün Kataloğu</title>
+    <title>IDM Mühendislik | 3D Teknik Katalog</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
@@ -12,73 +12,62 @@
         body { margin: 0; background: #000; overflow-x: hidden; color: white; font-family: 'Segoe UI', sans-serif; }
         #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
         .content { position: relative; z-index: 2; pointer-events: none; }
-        section { height: 100vh; display: flex; align-items: center; padding-left: 5%; }
-        .card { background: rgba(0,0,0,0.9); padding: 25px; border-left: 5px solid #007bff; max-width: 380px; pointer-events: all; border-radius: 8px; }
-        h2 { color: #007bff; margin: 0 0 10px 0; font-size: 2.2rem; }
-        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 999; }
+        section { height: 100vh; display: flex; align-items: center; padding-left: 10%; }
+        .card { background: rgba(255,255,255,0.03); padding: 30px; border-left: 2px solid #007bff; max-width: 350px; pointer-events: all; backdrop-filter: blur(10px); }
+        h2 { color: #007bff; margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+        p { color: #888; margin-top: 10px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-<div id="loader"><h1>Sistem Hazırlanıyor...</h1></div>
 <div id="canvas-container"></div>
 
 <div class="content">
-    <section><div class="card"><h2>IDM 63</h2><p>Lojistikten üretime, kusursuz mühendislik akışı.</p></div></section>
-    <section><div class="card"><h2>Kare Bıçaklar</h2><p>Üstün kesim performansı için tasarlandı.</p></div></section>
-    <section><div class="card"><h2>Alt Bıçaklar</h2><p>Yüksek direnç ve tam uyum.</p></div></section>
+    <section><div class="card"><h2>IDM 63</h2><p>Mühendislikte mükemmellik, detayda gizlidir.</p></div></section>
+    <section><div class="card"><h2>Kare Bıçaklar</h2><p>Karbür çelikten hassas üretim.</p></div></section>
+    <section><div class="card"><h2>Alt Bıçaklar</h2><p>Yüksek mukavemet, tam performans.</p></div></section>
 </div>
 
 <script>
     gsap.registerPlugin(ScrollTrigger);
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.outputEncoding = THREE.sRGBEncoding;
     document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-    // --- PROFESYONEL IŞIKLANDIRMA ---
-    scene.add(new THREE.AmbientLight(0xffffff, 1.2)); // Yumuşak genel ışık
-    const light1 = new THREE.DirectionalLight(0xffffff, 2);
-    light1.position.set(5, 5, 5);
+    // --- STÜDYO AYDINLATMASI ---
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5)); // Genel yumuşak ışık
+    const light1 = new THREE.PointLight(0xffffff, 2); // Üstten vuran sert ışık
+    light1.position.set(5, 10, 5);
     scene.add(light1);
-    const light2 = new THREE.PointLight(0x007bff, 1.5); // IDM Mavisi dolgu
-    light2.position.set(-5, 5, 2);
+    const light2 = new THREE.PointLight(0x007bff, 1.5); // IDM Mavisi yan ışık
+    light2.position.set(-5, 0, 5);
     scene.add(light2);
-
-    // --- KUTU VE DOKU ---
-    const tLoader = new THREE.TextureLoader();
-    const boxMat = new THREE.MeshStandardMaterial({ 
-        map: tLoader.load('kapalikutu.jpeg'),
-        roughness: 0.8
-    });
-    const box = new THREE.Mesh(new THREE.BoxGeometry(4, 2.8, 2.8), boxMat);
-    box.position.y = -1; // Kutuyu biraz aşağı alalım
-    scene.add(box);
 
     const loader = new THREE.GLTFLoader();
     const draco = new THREE.DRACOLoader();
     draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
     loader.setDRACOLoader(draco);
 
-    function setupPart(url, sectionIdx, texUrl, scaleVal) {
+    function loadModel(url, sectionIdx, initialScale) {
         loader.load(url, (gltf) => {
             const model = gltf.scene;
-            
-            // Metalik doku iyileştirmesi
+
+            // Metalik Görünüm İyileştirmesi
             model.traverse((child) => {
                 if (child.isMesh) {
                     child.material = new THREE.MeshStandardMaterial({
-                        color: 0x888888,
+                        color: 0x999999,
                         metalness: 1,
-                        roughness: 0.15
+                        roughness: 0.2
                     });
                 }
             });
 
-            // Otomatik merkezleme
+            // Merkeze Hizalama
             const b = new THREE.Box3().setFromObject(model);
             const center = b.getCenter(new THREE.Vector3());
             model.position.sub(center);
@@ -87,46 +76,51 @@
             group.add(model);
             scene.add(group);
 
-            group.scale.set(scaleVal, scaleVal, scaleVal);
-            group.position.set(0, -10, 3); // Başlangıçta gizli
+            group.scale.set(initialScale, initialScale, initialScale);
+            group.position.set(2, -10, 0); // Başta aşağıda sakla
+            group.rotation.x = 0.5; // Biraz eğimli dursun, daha artistik
 
-            // Scroll Animasyonu: Bıçağın kutunun "önüne" ve "yukarısına" süzülmesi
+            // Scroll Animasyonu
             gsap.to(group.position, {
-                y: 1.5, z: 5,
+                y: 0,
+                x: 1, // Yazının yanına kaydır
+                z: 4,
                 scrollTrigger: {
                     trigger: `.content section:nth-child(${sectionIdx})`,
-                    scrub: 1.5,
-                    onEnter: () => {
-                        boxMat.map = tLoader.load(texUrl);
-                        boxMat.needsUpdate = true;
-                    }
+                    scrub: 1.2,
+                    start: "top bottom",
+                    end: "top top"
                 }
             });
-            
+
+            // Sürekli Yavaş Dönüş
             gsap.to(group.rotation, {
                 y: Math.PI * 2,
                 scrollTrigger: {
                     trigger: `.content section:nth-child(${sectionIdx})`,
-                    scrub: 1
+                    scrub: 2
                 }
             });
         });
     }
 
-    // Ölçekleri 0.1 gibi çok küçük rakamlara çektim çünkü SolidWorks modellerin devasa yüklenebiliyor.
-    setupPart('karebicak.glb', 2, 'karebicakkutu.jpeg', 0.1); 
-    setupPart('sabitkucuk.glb', 3, 'altbicakkutu.jpeg', 0.1);
+    // Ölçekleri modellerine göre buradaki rakamlarla (0.1, 0.5 vb.) oynayarak düzeltebilirsin.
+    loadModel('karebicak.glb', 2, 0.2); 
+    loadModel('sabitkucuk.glb', 3, 0.2);
 
-    camera.position.set(0, 2, 12);
-
-    window.onload = () => { document.getElementById('loader').style.display = 'none'; };
+    camera.position.set(0, 0, 10);
 
     function animate() {
         requestAnimationFrame(animate);
-        box.rotation.y += 0.003;
         renderer.render(scene, camera);
     }
     animate();
+
+    window.onresize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    };
 </script>
 </body>
 </html>
