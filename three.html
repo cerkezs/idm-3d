@@ -2,18 +2,20 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>IDM 3D Scrollytelling</title>
+    <title>IDM 3D Vizyon - Final</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
-        body { margin: 0; background: #111; overflow-x: hidden; color: white; font-family: sans-serif; }
+        body { margin: 0; background: #000; overflow-x: hidden; color: white; font-family: 'Segoe UI', sans-serif; }
         #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
         .content { position: relative; z-index: 2; pointer-events: none; }
         section { height: 100vh; display: flex; align-items: center; padding-left: 5%; }
-        .card { background: rgba(0,0,0,0.8); padding: 20px; border-left: 4px solid #007bff; max-width: 350px; pointer-events: all; }
+        .card { background: rgba(0,0,0,0.85); padding: 25px; border-left: 5px solid #007bff; max-width: 350px; pointer-events: all; backdrop-filter: blur(8px); }
+        h2 { color: #007bff; margin: 0 0 10px 0; letter-spacing: 1px; }
+        p { margin: 0; color: #ccc; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -22,41 +24,43 @@
 
 <div class="content">
     <section><div class="card"><h2>IDM 63 Teslimat</h2><p>Parçalar dünyanın her yerine güvenle ulaşır.</p></div></section>
-    <section><div class="card"><h2>Kare Bıçaklar</h2><p>Hassas karbür kesim teknolojisi.</p></div></section>
-    <section><div class="card"><h2>Alt Bıçaklar</h2><p>Dayanıklılık ve güç bir arada.</p></div></section>
+    <section><div class="card"><h2>Kare Bıçaklar</h2><p>Hassas toleranslarla işlenmiş kesici uçlar.</p></div></section>
+    <section><div class="card"><h2>Alt Bıçaklar</h2><p>Yüksek mukavemetli sabit bıçak grupları.</p></div></section>
 </div>
 
 <script>
     gsap.registerPlugin(ScrollTrigger);
 
+    // --- 1. SAHNE VE RENDERER ---
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1a1a);
-
+    scene.background = new THREE.Color(0x0a0a0a);
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
     document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-    // AYDINLATMA (Her açıyı gör)
-    scene.add(new THREE.AmbientLight(0xffffff, 2.5));
-    const sun = new THREE.DirectionalLight(0xffffff, 3);
-    sun.position.set(5, 10, 7);
-    scene.add(sun);
+    // --- 2. AYDINLATMA (Metalik Parlaklık İçin) ---
+    scene.add(new THREE.AmbientLight(0xffffff, 1.5));
+    const mainLight = new THREE.PointLight(0xffffff, 2);
+    mainLight.position.set(5, 10, 10);
+    scene.add(mainLight);
+    const blueLight = new THREE.PointLight(0x007bff, 1.5);
+    blueLight.position.set(-5, 5, 5);
+    scene.add(blueLight);
 
-    // KUTU VE RESİMLER
+    // --- 3. KUTU VE RESİMLER ---
     const tLoader = new THREE.TextureLoader();
-    const boxMat = new THREE.MeshBasicMaterial({ color: 0x555555 }); // Resim gelene kadar gri
-    
     const texKapali = tLoader.load('kapalikutu.jpeg');
     const texKare = tLoader.load('karebicakkutu.jpeg');
     const texAlt = tLoader.load('altbicakkutu.jpeg');
-    boxMat.map = texKapali;
 
+    const boxMat = new THREE.MeshBasicMaterial({ map: texKapali });
     const box = new THREE.Mesh(new THREE.BoxGeometry(4, 2.8, 2.8), boxMat);
     scene.add(box);
 
-    // MODELLER
+    // --- 4. MODELLERİ YÜKLEME VE HİZALAMA ---
     const loader = new THREE.GLTFLoader();
     const draco = new THREE.DRACOLoader();
     draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -66,7 +70,19 @@
         loader.load(url, (gltf) => {
             const model = gltf.scene;
             
-            // Merkeze hizalama (SolidWorks kaymasını düzeltir)
+            // Parlatıcı ve Aydınlatıcı Materyal Uygula
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    child.material = new THREE.MeshStandardMaterial({
+                        color: 0x888888,
+                        metalness: 1.0,
+                        roughness: 0.2,
+                        emissive: 0x111111 
+                    });
+                }
+            });
+
+            // Merkeze Hizala (SolidWorks kaymasını sıfırlar)
             const b = new THREE.Box3().setFromObject(model);
             const center = b.getCenter(new THREE.Vector3());
             model.position.sub(center);
@@ -75,16 +91,30 @@
             group.add(model);
             scene.add(group);
 
-            group.scale.set(30, 30, 30); // Boyutu büyüttük
-            group.position.set(0, -12, 3); // Başlangıç pozisyonu (aşağıda)
+            // ÖLÇEK AYARI: 1 Birim idealdir, çok büyükse 0.5 yap
+            group.scale.set(1, 1, 1); 
+            group.position.set(0, -10, 3); // Başta ekranın altında saklı
 
+            // SCROLL ANİMASYONU
             gsap.to(group.position, {
-                y: 1.5,
+                y: 1.2, // Kutunun üzerine çık
+                z: 4,   // Kameraya biraz yaklaş
+                scrollTrigger: {
+                    trigger: `.content section:nth-child(${sectionIdx})`,
+                    scrub: 1.2,
+                    start: "top bottom",
+                    end: "top top"
+                }
+            });
+
+            // Dönüş Animasyonu
+            gsap.to(group.rotation, {
+                y: Math.PI * 2,
                 scrollTrigger: {
                     trigger: `.content section:nth-child(${sectionIdx})`,
                     scrub: 1,
                     start: "top bottom",
-                    end: "top top"
+                    end: "bottom top"
                 }
             });
         });
@@ -93,7 +123,7 @@
     setupPart('karebicak.glb', 2);
     setupPart('sabitkucuk.glb', 3);
 
-    // Kutu Görsel Değişimi
+    // Kutu Resim Değişimi
     ScrollTrigger.create({
         trigger: ".content section:nth-child(2)",
         onEnter: () => boxMat.map = texKare,
@@ -110,7 +140,7 @@
         y: Math.PI * 2,
         scrollTrigger: {
             trigger: ".content",
-            scrub: 1,
+            scrub: 1.5,
             start: "top top",
             end: "bottom bottom"
         }
@@ -123,6 +153,12 @@
         renderer.render(scene, camera);
     }
     animate();
+
+    window.onresize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    };
 </script>
 </body>
 </html>
