@@ -21,6 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio"></script>
 <script>
 tailwind.config = {
@@ -98,9 +100,8 @@ details>summary::-webkit-details-marker{display:none}
         </div>
       </div>
       <a href="projeler.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">Projeler</a>
-      <a href="referanslar.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-primary bg-primary-50">Referanslar</a>
+      
       <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">Blog</a>
-      <a href="sss.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">SSS</a>
       <a href="iletisim.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">İletişim</a>
     </nav>
     <div class="flex items-center gap-2">
@@ -122,7 +123,6 @@ details>summary::-webkit-details-marker{display:none}
       <a href="projeler.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Projeler</a>
       <a href="referanslar.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Referanslar</a>
       <a href="blog.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Blog</a>
-      
       <a href="iletisim.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">İletişim</a>
       <div class="px-3 py-2 text-xs uppercase tracking-wider text-gray-400 mt-2">Sektörler</div>
       <a href="sektor/gida.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Gıda Sektörü</a><a href="sektor/madencilik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Madencilik Sektörü</a><a href="sektor/lojistik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Lojistik &amp; Depo</a><a href="sektor/insaat-cimento.html" class="px-3 py-2 rounded-md hover:bg-gray-50">İnşaat &amp; Çimento</a>
@@ -134,62 +134,103 @@ details>summary::-webkit-details-marker{display:none}
 <nav aria-label="Breadcrumb" class="border-b border-gray-100 bg-gray-50/50">
     <ol class="max-w-7xl mx-auto px-4 lg:px-8 py-3 flex flex-wrap items-center gap-1.5 text-xs text-gray-500"><li class="flex items-center gap-1.5"><a href="index.html" class="hover:text-primary">Anasayfa</a></li><li class="flex items-center gap-1.5"><svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg><span class="text-gray-900 font-medium">Referanslar</span></li></ol>
   </nav>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://www.nozulmakina.com.tr/"},{"@type":"ListItem","position":2,"name":"Referanslar"}]}</script><main>
-<section class="bg-gradient-hero text-white py-16">
-  <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <span class="text-xs font-semibold text-primary uppercase tracking-wider">Referanslar</span>
-    <h1 class="font-display text-4xl md:text-5xl font-bold mt-2">Türkiye'nin lider markaları bizi seçti</h1>
-    <p class="mt-3 max-w-2xl text-gray-300">Gıda, madencilik, savunma, çimento, demir-çelik ve daha pek çok sektörden 500+ memnun müşteri.</p>
-  </div>
-</section>
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/isdemir.jpg" alt="İSDEMİR" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2025/01/mke_logo_400x267.jpg" alt="MKE" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/beypilic.jpg" alt="Beypiliç" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/cp-yem.jpg" alt="CP" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/namet.jpg" alt="Namet" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/01/kalde_400x267.jpg" alt="Kalde" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/10/logo_322_97_400x267.jpg" alt="Erkunt" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/01/aa_400x267.jpg" alt="Alkim" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/10/olimpia_400x267.jpg" alt="Olimpia" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/10/logo_400x267-1.jpg" alt="Gürok" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2025/01/PATISWISS_400x267.jpg" alt="Patiswiss" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/10/Cansan_Logo_400x267.jpg" alt="Cansan" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/10/lazzonilogofor-the-pressrelease_400x267.jpg" alt="Lazzoni" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/edirne-tb.jpg" alt="Edirne TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/ankara-tb.jpg" alt="Ankara TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/eskisehir-tb.jpg" alt="Eskişehir TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/polatli-tb.jpg" alt="Polatlı TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/izosis.jpg" alt="İzosis" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/metaltek.jpg" alt="Metaltek" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/durukan.jpg" alt="Durukan" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
-    </div><div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
-      <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2023/11/palme-makina.jpg" alt="Palme Makina" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://www.nozulmakina.com.tr/"},{"@type":"ListItem","position":2,"name":"Referanslar"}]}</script>
+<main>
+
+<section class="bg-gradient-hero text-white py-16 pb-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs font-semibold text-primary uppercase tracking-wider">Referans Haritamız</span>
+      <h1 class="font-display text-3xl md:text-5xl font-bold mt-2">Türkiye'nin Lider Markaları Bizi Seçti</h1>
+      <p class="mt-4 text-gray-300">Gıda, madencilik, savunma ve demir-çelik sektörlerinde yüzlerce projeyi başarıyla devreye aldık.</p>
+    </div>
+    
+    <div class="bg-white/5 p-2 rounded-2xl border border-white/10 shadow-elegant backdrop-blur-sm">
+        <div id="referans-haritasi" class="w-full h-[400px] md:h-[500px] rounded-xl z-10" style="background-color: #f8f9fa;"></div>
     </div>
   </div>
-</section></main>
-<footer class="bg-ink text-gray-300 mt-20">
+</section>
+
+<section class="py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/isdemir.png" alt="İSDEMİR" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/mke.png" alt="MKE" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/beypilic.png" alt="Beypiliç" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/cpyem.png" alt="CP Yem" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/manet.png" alt="Namet / Manet" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/kalde.png" alt="Kalde" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/erkunt.png" alt="Erkunt" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/alkim.png" alt="Alkim" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/olimpia.png" alt="Olimpia" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/gurok.png" alt="Gürok" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/patis.png" alt="Patiswiss" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/cansan.png" alt="Cansan" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/lazzoni.png" alt="Lazzoni" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/edirne.png" alt="Edirne TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/ankara.png" alt="Ankara TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/eskisehir.png" alt="Eskişehir TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/polatli.png" alt="Polatlı TB" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/izosis.png" alt="İzosis" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/metaltek.png" alt="Metaltek" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/durukan.png" alt="Durukan" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/palme.png" alt="Palme Makina" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/ilgin.png" alt="Ilgın" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/ravza.png" alt="Ravza" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+    <div class="aspect-square bg-white border border-gray-100 rounded-2xl p-6 grid place-items-center shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
+      <img src="referanslar/5k.png" alt="5K" loading="lazy" class="max-h-20 w-full object-contain opacity-70 hover:opacity-100 transition"/>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="bg-ink text-gray-300">
   <div class="max-w-7xl mx-auto px-4 lg:px-8 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
     <div>
       <a href="index.html" class="flex items-center gap-2 font-display font-bold text-xl text-white">
@@ -230,13 +271,55 @@ details>summary::-webkit-details-marker{display:none}
     </div>
   </div>
   <div class="border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-6 text-xs text-gray-500 flex flex-col md:flex-row justify-between gap-2">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-6 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-2">
       <p>© 2026 Nozul Makina. Tüm hakları saklıdır.</p>
-      <p>Endüstriyel Konveyör Sistemleri • Türkiye</p>
+      <p> <a href="http://www.serdarseker.com.tr" target="_blank" class="hover:text-primary transition-colors"> Copyright 2025 © Designed by Serdar ŞEKER</a></p>
     </div>
   </div>
 </footer>
 <a href="https://api.whatsapp.com/send/?phone=905333305285" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 text-white grid place-items-center shadow-elegant hover:scale-110 transition">
   <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var map = L.map('referans-haritasi', {
+          scrollWheelZoom: false
+      }).setView([39.2, 35.0], 5.5);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; OpenStreetMap &copy; CARTO'
+      }).addTo(map);
+
+      var nozulIcon = L.divIcon({
+          className: 'custom-div-icon',
+          html: "<div style='background-color:#ff7a2d; width:14px; height:14px; border-radius:50%; border:3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);'></div>",
+          iconSize: [14, 14],
+          iconAnchor: [7, 7]
+      });
+
+      var referanslar = [
+          { isim: "İSDEMİR", yer: "Payas, Hatay", lat: 36.757, lng: 36.196 },
+          { isim: "MKE", yer: "Yenimahalle, Ankara", lat: 39.933, lng: 32.859 },
+          { isim: "Beypiliç", yer: "Merkez, Bolu", lat: 40.739, lng: 31.611 },
+          { isim: "CP Yem", yer: "Mecidiyeköy, İstanbul", lat: 41.066, lng: 28.995 },
+          { isim: "Namet", yer: "Çayırova, Kocaeli", lat: 40.824, lng: 29.387 },
+          { isim: "Kalde Boru", yer: "Beylikdüzü, İstanbul", lat: 41.002, lng: 28.641 },
+          { isim: "Erkunt Traktör", yer: "Sincan, Ankara", lat: 39.967, lng: 32.576 },
+          { isim: "Alkim Kimya", yer: "Tuzla, İstanbul", lat: 40.865, lng: 29.359 },
+          { isim: "Gürok Grup", yer: "Merkez, Kütahya", lat: 39.424, lng: 29.983 },
+          { isim: "Patiswiss", yer: "Sincan, Ankara", lat: 39.814, lng: 32.443 },
+          { isim: "Lazzoni Mobilya", yer: "Akyurt, Ankara", lat: 40.063, lng: 32.990 },
+          { isim: "Durukan Şekerleme", yer: "Sincan, Ankara", lat: 39.992, lng: 32.614 },
+          { isim: "Cansan Alüminyum", yer: "Bursa", lat: 40.182, lng: 29.066 },
+          { isim: "Edirne Ticaret Borsası", yer: "Edirne", lat: 41.677, lng: 26.555 },
+          { isim: "Eskişehir Ticaret Borsası", yer: "Eskişehir", lat: 39.776, lng: 30.520 }
+      ];
+
+      referanslar.forEach(function(ref) {
+          var marker = L.marker([ref.lat, ref.lng], {icon: nozulIcon}).addTo(map);
+          marker.bindPopup("<strong style='color:#0f1115; font-family:Inter,sans-serif;'>" + ref.isim + "</strong><br><span style='color:#666; font-size:12px; font-family:Inter,sans-serif;'>" + ref.yer + "</span>");
+      });
+  });
+</script>
 </body></html>
