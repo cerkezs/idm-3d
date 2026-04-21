@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Nozul Makina — Endüstriyel Konveyör Sistemleri Üreticisi</title>
-<meta name="description" content="Bantlı, rulolu, zincirli, vidalı konveyör üretimi. 2001&#39;den beri Türkiye&#39;nin önde gelen endüstriyel taşıma sistemleri üreticisi. Hızlı teklif alın." />
+<meta name="description" content="Bantlı, rulolu, zincirli, vidalı konveyör üretimi. 2001'den beri Türkiye'nin önde gelen endüstriyel taşıma sistemleri üreticisi. Hızlı teklif alın." />
 <meta name="author" content="Nozul Makina" />
 <meta name="theme-color" content="#ff7a2d" />
 <link rel="canonical" href="https://www.nozulmakina.com.tr/" />
@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Nozul Makina" />
 <meta property="og:locale" content="tr_TR" />
 <meta property="og:title" content="Nozul Makina — Endüstriyel Konveyör Sistemleri Üreticisi" />
-<meta property="og:description" content="Bantlı, rulolu, zincirli, vidalı konveyör üretimi. 2001&#39;den beri Türkiye&#39;nin önde gelen endüstriyel taşıma sistemleri üreticisi. Hızlı teklif alın." />
+<meta property="og:description" content="Bantlı, rulolu, zincirli, vidalı konveyör üretimi. 2001'den beri Türkiye'nin önde gelen endüstriyel taşıma sistemleri üreticisi. Hızlı teklif alın." />
 <meta property="og:image" content="https://www.nozulmakina.com.tr/wp-content/uploads/2025/03/OTOMATIK-AGIR-RULOLU-KONVEYOR-SISTEMI-1-2048x1152-1-min-png.webp" />
 <meta property="og:url" content="https://www.nozulmakina.com.tr/" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -55,6 +55,21 @@ body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
 .text-gradient{background:linear-gradient(135deg,#ff7a2d,#ffb380);-webkit-background-clip:text;background-clip:text;color:transparent}
 .fade-in{opacity:0;transform:translateY(12px);animation:fi .7s forwards}
 @keyframes fi{to{opacity:1;transform:none}}
+
+/* Sonsuz Kayan Bant Animasyonu */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 details>summary{list-style:none;cursor:pointer}
 details>summary::-webkit-details-marker{display:none}
 .prose-custom h2{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-top:1.75rem;margin-bottom:.6rem;color:#0f1115}
@@ -82,25 +97,28 @@ details>summary::-webkit-details-marker{display:none}
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition absolute left-0 top-full pt-2 w-72">
-          <div class="bg-white border border-gray-100 rounded-xl shadow-soft overflow-hidden"><a href="sektor/gida.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
-      <div class="font-medium text-sm">Gıda Sektörü</div>
-      <div class="text-xs text-gray-500">Hijyen ve verimlilik birlikte</div>
-    </a><a href="sektor/madencilik.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
-      <div class="font-medium text-sm">Madencilik Sektörü</div>
-      <div class="text-xs text-gray-500">Aşındırıcı yüklere dayanıklı çözümler</div>
-    </a><a href="sektor/lojistik.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
-      <div class="font-medium text-sm">Lojistik &amp; Depo</div>
-      <div class="text-xs text-gray-500">Sevkiyat hızını katlayın</div>
-    </a><a href="sektor/insaat-cimento.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
-      <div class="font-medium text-sm">İnşaat &amp; Çimento</div>
-      <div class="text-xs text-gray-500">Toz ve dökme malzeme uzmanlığı</div>
-    </a></div>
+          <div class="bg-white border border-gray-100 rounded-xl shadow-soft overflow-hidden">
+            <a href="sektor/gida.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
+              <div class="font-medium text-sm">Gıda Sektörü</div>
+              <div class="text-xs text-gray-500">Hijyen ve verimlilik birlikte</div>
+            </a>
+            <a href="sektor/madencilik.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
+              <div class="font-medium text-sm">Madencilik Sektörü</div>
+              <div class="text-xs text-gray-500">Aşındırıcı yüklere dayanıklı çözümler</div>
+            </a>
+            <a href="sektor/lojistik.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
+              <div class="font-medium text-sm">Lojistik &amp; Depo</div>
+              <div class="text-xs text-gray-500">Sevkiyat hızını katlayın</div>
+            </a>
+            <a href="sektor/insaat-cimento.html" class="block px-4 py-3 hover:bg-primary-50 hover:text-primary transition">
+              <div class="font-medium text-sm">İnşaat &amp; Çimento</div>
+              <div class="text-xs text-gray-500">Toz ve dökme malzeme uzmanlığı</div>
+            </a>
+          </div>
         </div>
       </div>
       <a href="projeler.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">Projeler</a>
       <a href="referanslar.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">Referanslar</a>
-     
-      
       <a href="iletisim.html" class="px-3 py-2 rounded-md text-sm font-medium transition text-gray-700 hover:text-primary hover:bg-gray-50">İletişim</a>
     </nav>
     <div class="flex items-center gap-2">
@@ -121,11 +139,12 @@ details>summary::-webkit-details-marker{display:none}
       <a href="urunler.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Ürünler</a>
       <a href="projeler.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Projeler</a>
       <a href="referanslar.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">Referanslar</a>
-     
-    
       <a href="iletisim.html" class="px-3 py-2.5 rounded-md hover:bg-gray-50">İletişim</a>
       <div class="px-3 py-2 text-xs uppercase tracking-wider text-gray-400 mt-2">Sektörler</div>
-      <a href="sektor/gida.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Gıda Sektörü</a><a href="sektor/madencilik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Madencilik Sektörü</a><a href="sektor/lojistik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Lojistik &amp; Depo</a><a href="sektor/insaat-cimento.html" class="px-3 py-2 rounded-md hover:bg-gray-50">İnşaat &amp; Çimento</a>
+      <a href="sektor/gida.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Gıda Sektörü</a>
+      <a href="sektor/madencilik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Madencilik Sektörü</a>
+      <a href="sektor/lojistik.html" class="px-3 py-2 rounded-md hover:bg-gray-50">Lojistik &amp; Depo</a>
+      <a href="sektor/insaat-cimento.html" class="px-3 py-2 rounded-md hover:bg-gray-50">İnşaat &amp; Çimento</a>
       <a href="teklif-al.html" class="mt-2 bg-gradient-primary text-white px-4 py-3 rounded-md text-center font-semibold">Teklif Al</a>
     </div>
   </div>
@@ -168,6 +187,62 @@ details>summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
+<section class="py-10 bg-white overflow-hidden border-b border-gray-50">
+  <div class="relative flex items-center">
+    <div class="animate-marquee flex items-center gap-16 pr-16">
+      <img src="5k.png" alt="5K" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="alkim.png" alt="Alkim" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ankara.png" alt="Ankara" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="beypilic.png" alt="Beypilic" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="cansan.png" alt="Cansan" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="cpyem.png" alt="CP Yem" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="durukan.png" alt="Durukan" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="edirne.jpg" alt="Edirne" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="erkunt.png" alt="Erkunt" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="eskisehir.jpg" alt="Eskisehir" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="gurok.png" alt="Gurok" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ılgın.jpg" alt="Ilgın" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="isdemir.png" alt="Isdemir" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="izosis.png" alt="Izosis" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="kalde.png" alt="Kalde" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="lazzoni.png" alt="Lazzoni" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="manet.jpg" alt="Manet" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="metaltek.png" alt="Metaltek" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="mke.png" alt="MKE" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="olimpia.png" alt="Olimpia" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="palme.png" alt="Palme" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="patis.png" alt="Patis" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="polatlı.jpg" alt="Polatlı" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ravza.png" alt="Ravza" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      
+      <img src="5k.png" alt="5K" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="alkim.png" alt="Alkim" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ankara.png" alt="Ankara" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="beypilic.png" alt="Beypilic" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="cansan.png" alt="Cansan" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="cpyem.png" alt="CP Yem" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="durukan.png" alt="Durukan" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="edirne.jpg" alt="Edirne" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="erkunt.png" alt="Erkunt" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="eskisehir.jpg" alt="Eskisehir" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="gurok.png" alt="Gurok" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ılgın.jpg" alt="Ilgın" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="isdemir.png" alt="Isdemir" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="izosis.png" alt="Izosis" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="kalde.png" alt="Kalde" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="lazzoni.png" alt="Lazzoni" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="manet.jpg" alt="Manet" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="metaltek.png" alt="Metaltek" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="mke.png" alt="MKE" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="olimpia.png" alt="Olimpia" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="palme.png" alt="Palme" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="patis.png" alt="Patis" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="polatlı.jpg" alt="Polatlı" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+      <img src="ravza.png" alt="Ravza" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+    </div>
+  </div>
+</section>
+
 <section class="py-20">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="max-w-2xl">
@@ -176,7 +251,6 @@ details>summary::-webkit-details-marker{display:none}
       <p class="mt-3 text-gray-600">Üretim hattınız için doğru taşıma sistemini birlikte seçelim.</p>
     </div>
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      
         <a href="urunler/pvc-bantli-konveyor.html" class="group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-soft hover:shadow-elegant hover:-translate-y-1 transition">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
             <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/01/IMG_1554_500x540.jpg" alt="PVC Bantlı Konveyör" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
@@ -251,7 +325,6 @@ details>summary::-webkit-details-marker{display:none}
       <h2 class="font-display text-3xl md:text-4xl font-bold mt-2">Çözüm Sunduğumuz Endüstriler</h2>
     </div>
     <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      
         <a href="sektor/gida.html" class="group relative overflow-hidden rounded-2xl bg-ink text-white aspect-[4/5] block">
           <img src="https://www.nozulmakina.com.tr/wp-content/uploads/2024/01/IMG_1554_500x540.jpg" alt="Gıda Sektörü" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 group-hover:scale-110 transition duration-700"/>
           <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent"></div>
@@ -294,7 +367,6 @@ details>summary::-webkit-details-marker{display:none}
 
 <section class="py-20">
   <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-3 gap-8">
-    
       <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-soft">
         <div class="text-primary text-3xl">"</div>
         <p class="text-gray-700 leading-relaxed">Sahaya özel mühendislik yaklaşımları sayesinde projemiz hem zamanında hem de tahminden düşük maliyetle tamamlandı. Saha ekibi çok profesyonel.</p>
@@ -355,14 +427,18 @@ details>summary::-webkit-details-marker{display:none}
         <li><a href="projeler.html" class="hover:text-primary">Projeler</a></li>
         <li><a href="referanslar.html" class="hover:text-primary">Referanslar</a></li>
         <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
-     
         <li><a href="teklif-al.html" class="hover:text-primary">Teklif Al</a></li>
       </ul>
     </div>
     <div>
       <h3 class="text-sm font-semibold uppercase tracking-wider text-primary mb-4">Ürünler</h3>
       <ul class="space-y-2 text-sm text-gray-400">
-        <li><a href="urunler/pvc-bantli-konveyor.html" class="hover:text-primary">PVC Bantlı Konveyör</a></li><li><a href="urunler/kaucuk-bantli-konveyor.html" class="hover:text-primary">Kauçuk Bantlı Konveyör</a></li><li><a href="urunler/rulolu-konveyor.html" class="hover:text-primary">Rulolu Konveyör</a></li><li><a href="urunler/zincirli-konveyor.html" class="hover:text-primary">Zincirli Konveyör</a></li><li><a href="urunler/vidali-konveyor.html" class="hover:text-primary">Vidalı Konveyör (Helezon)</a></li><li><a href="urunler/elevator.html" class="hover:text-primary">Kovalı Elevatör</a></li>
+        <li><a href="urunler/pvc-bantli-konveyor.html" class="hover:text-primary">PVC Bantlı Konveyör</a></li>
+        <li><a href="urunler/kaucuk-bantli-konveyor.html" class="hover:text-primary">Kauçuk Bantlı Konveyör</a></li>
+        <li><a href="urunler/rulolu-konveyor.html" class="hover:text-primary">Rulolu Konveyör</a></li>
+        <li><a href="urunler/zincirli-konveyor.html" class="hover:text-primary">Zincirli Konveyör</a></li>
+        <li><a href="urunler/vidali-konveyor.html" class="hover:text-primary">Vidalı Konveyör (Helezon)</a></li>
+        <li><a href="urunler/elevator.html" class="hover:text-primary">Kovalı Elevatör</a></li>
       </ul>
     </div>
     <div>
